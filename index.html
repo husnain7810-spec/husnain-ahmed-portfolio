@@ -20,6 +20,7 @@
             --accent: #ff6b35;
             --text: #c3d1e6;
             --card-bg: rgba(255, 255, 255, 0.03);
+            --link-color: #4ade80;
         }
 
         html {
@@ -427,6 +428,8 @@
             border: 1px solid rgba(0, 212, 255, 0.1);
             transition: all 0.3s ease;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card::before {
@@ -452,6 +455,9 @@
 
         .project-content {
             padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-header {
@@ -474,6 +480,33 @@
             color: var(--text);
             font-size: 0.95rem;
             line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .project-link {
+            margin-top: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.25rem;
+            border: 1px solid var(--link-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .project-link:hover {
+            background: var(--link-color);
+            color: var(--dark);
+            transform: translateX(5px);
+        }
+
+        .project-link svg {
+            width: 20px;
+            height: 20px;
         }
 
         .project-highlights {
@@ -779,15 +812,12 @@
         <div class="hero-container">
             <div class="profile-section">
                 <div class="profile-img-container">
-                    <!-- IMAGE SETUP INSTRUCTION:
-                         1. Save your photo as "profile.jpg" (or .png) in the same folder as this HTML file
-                         2. Change src="profile.jpg" below to match your filename
-                         3. Recommended size: 400x400 pixels, square aspect ratio -->
+                    <!-- YOUR PROFILE PHOTO -->
                     <img src="profile.jpg" alt="Husnain Ahmed" class="profile-img" id="profile-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'280\' height=\'280\' viewBox=\'0 0 280 280\'%3E%3Crect width=\'280\' height=\'280\' fill=\'%230a0e27\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'72\' fill=\'%2300d4ff\'%3EHA%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div style="color: var(--primary); font-size: 1.1rem; margin-top: 1rem;">
                     <span style="display: block; margin-bottom: 0.5rem;">📍 Wah, Pakistan</span>
-                    <span style="display: block;">🎂 Jan 09, 2003</span>
+                    <span style="display: block;">⚡ Electrical Engineer</span>
                 </div>
             </div>
             <div class="hero-content">
@@ -930,7 +960,9 @@
 
     <section id="projects">
         <h2 class="section-title">Featured Projects</h2>
+        
         <div class="projects-grid">
+            <!-- Project 1: Ball Balancing -->
             <div class="project-card fade-in">
                 <div class="project-content">
                     <div class="project-header">
@@ -940,6 +972,10 @@
                     <p class="project-description">
                         Developed a Proportional-Integral-Derivative (PID) controller to stabilize a ball on a plate using a resistive touch panel for accurate position sensing. Integrated mechanical engineering, electrical control systems, and advanced algorithms.
                     </p>
+                    <a href="https://drive.google.com/drive/u/1/folders/16_WP1EG0a_GG9lr-f_bFoed0Sz073qm8" class="project-link" target="_blank">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Project Photos
+                    </a>
                     <div class="project-highlights">
                         <span class="highlight-tag">Control Systems</span>
                         <span class="highlight-tag">PID Tuning</span>
@@ -949,6 +985,7 @@
                 </div>
             </div>
 
+            <!-- Project 2: Solar Farm -->
             <div class="project-card fade-in">
                 <div class="project-content">
                     <div class="project-header">
@@ -956,36 +993,22 @@
                         <div class="project-date">Oct-Nov 2023</div>
                     </div>
                     <p class="project-description">
-                        Led the design of a 1.5MW solar installation utilizing 833 monocrystalline panels (550W each). 
-                        Optimized positioning using Helioscope and real irradiation data from PV Watts, achieving sustainable energy goals within budget constraints.
+                        Led the design of a 1.5MW solar installation utilizing 833 monocrystalline panels (550W each). Optimized positioning using Helioscope and real irradiation data from PV Watts.
                     </p>
+                    <a href="https://drive.google.com/drive/u/1/folders/1Rd8US4vO8OqJey0L_LggcFsIYrLBUrYV" class="project-link" target="_blank">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Project Photos
+                    </a>
                     <div class="project-highlights">
                         <span class="highlight-tag">Solar Design</span>
-                        <span class="highlight-tag">Energy Optimization</span>
                         <span class="highlight-tag">1.5MW Capacity</span>
                         <span class="highlight-tag">Helioscope</span>
+                        <span class="highlight-tag">PV Watts</span>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card fade-in">
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3 class="project-title">Power System Analysis Suite</h3>
-                        <div class="project-date">Apr-May 2023</div>
-                    </div>
-                    <p class="project-description">
-                        Comprehensive analysis project using IEEE 14-bus and 5-bus systems. Implemented Load Flow, Power Flow, and Fault Analysis using Newton-Raphson, Fast Decoupled, and Gauss-Seidel methods in PSS/E and MATLAB.
-                    </p>
-                    <div class="project-highlights">
-                        <span class="highlight-tag">PSS/E</span>
-                        <span class="highlight-tag">MATLAB</span>
-                        <span class="highlight-tag">Grid Analysis</span>
-                        <span class="highlight-tag">IEEE Standards</span>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Project 3: Robotic Arm -->
             <div class="project-card fade-in">
                 <div class="project-content">
                     <div class="project-header">
@@ -993,17 +1016,22 @@
                         <div class="project-date">Mar-Apr 2022</div>
                     </div>
                     <p class="project-description">
-                        Designed a 4-DOF robotic arm using servo motors and wood construction. Implemented PWM control with Arduino, simulated in Proteus, and verified signals with oscilloscope. Features LCD display for motor duty cycle monitoring.
+                        Designed a 4-DOF robotic arm using servo motors and wood construction. Implemented PWM control with Arduino, simulated in Proteus, and verified signals with oscilloscope.
                     </p>
+                    <a href="https://drive.google.com/file/d/1VgfiYZcjYkBjSyc3qSuiaogYwkQKk-v2/view" class="project-link" target="_blank">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Project Photos
+                    </a>
                     <div class="project-highlights">
                         <span class="highlight-tag">Robotics</span>
                         <span class="highlight-tag">Arduino</span>
                         <span class="highlight-tag">4-DOF</span>
-                        <span class="highlight-tag">Proteus Simulation</span>
+                        <span class="highlight-tag">Proteus</span>
                     </div>
                 </div>
             </div>
 
+            <!-- Project 4: Irrigation -->
             <div class="project-card fade-in">
                 <div class="project-content">
                     <div class="project-header">
@@ -1011,33 +1039,60 @@
                         <div class="project-date">Mar-Apr 2024</div>
                     </div>
                     <p class="project-description">
-                        Developed an automated agricultural irrigation system using CX-Programmer and CX-Designer. 
-                        Implemented ladder logic to streamline irrigation processes, enhancing efficiency and resource management in industrial automation settings.
+                        Developed an automated agricultural irrigation system using CX-Programmer and CX-Designer. Implemented ladder logic to streamline irrigation processes.
                     </p>
+                    <a href="https://drive.google.com/drive/u/1/folders/10j7vgQzY2l6LrUvf1PSztRDKkPUS5fLc" class="project-link" target="_blank">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Project Photos
+                    </a>
                     <div class="project-highlights">
                         <span class="highlight-tag">PLC</span>
                         <span class="highlight-tag">Ladder Logic</span>
-                        <span class="highlight-tag">Industrial Automation</span>
-                        <span class="highlight-tag">CX-Programmer</span>
+                        <span class="highlight-tag">Automation</span>
                     </div>
                 </div>
             </div>
 
+            <!-- Project 5: Power Analysis -->
             <div class="project-card fade-in">
                 <div class="project-content">
                     <div class="project-header">
-                        <h3 class="project-title">Antenna Azimuth Control System</h3>
-                        <div class="project-date">Nov-Dec 2022</div>
+                        <h3 class="project-title">Power System Analysis Suite</h3>
+                        <div class="project-date">Apr-May 2023</div>
                     </div>
                     <p class="project-description">
-                        Designed and tuned Lead and Lag compensators to improve dynamic response and stability. 
-                        Implemented PID controller for precise position control of antenna azimuth using MATLAB/Simulink for modeling and simulation.
+                        Comprehensive analysis using IEEE 14-bus and 5-bus systems. Implemented Load Flow and Fault Analysis using Newton-Raphson, Fast Decoupled, and Gauss-Seidel methods in PSS/E.
                     </p>
+                    <a href="https://drive.google.com/drive/u/1/folders/1AMAV4EwZpNuAwqIHeEGf5OnGhiqrCwzc" class="project-link" target="_blank">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Project Photos
+                    </a>
                     <div class="project-highlights">
-                        <span class="highlight-tag">Control Theory</span>
+                        <span class="highlight-tag">PSS/E</span>
                         <span class="highlight-tag">MATLAB</span>
-                        <span class="highlight-tag">Compensator Design</span>
-                        <span class="highlight-tag">Position Control</span>
+                        <span class="highlight-tag">IEEE Standards</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Power Factor -->
+            <div class="project-card fade-in">
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Power Factor Correction using Capacitor Bank</h3>
+                        <div class="project-date">Apr-May 2023</div>
+                    </div>
+                    <p class="project-description">
+                        Designed and implemented a Capacitor Bank to improve power factor. Utilized various capacitors, choke for inductive load, and light bulbs for resistive load simulation with 5A circuit breaker protection.
+                    </p>
+                    <a href="https://drive.google.com/drive/u/1/folders/1QiScGlNfeoaHvkVXFCjsZJE4hYamB9YP" class="project-link" target="_blank">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Project Photos
+                    </a>
+                    <div class="project-highlights">
+                        <span class="highlight-tag">Power Factor</span>
+                        <span class="highlight-tag">Capacitor Bank</span>
+                        <span class="highlight-tag">Energy Meter</span>
                     </div>
                 </div>
             </div>
@@ -1047,10 +1102,10 @@
     <section id="all-projects">
         <h2 class="section-title">Complete Project Portfolio</h2>
         <p style="text-align: center; margin-bottom: 3rem; color: var(--text);">
-            Comprehensive archive of all academic and technical projects completed during B.Sc Electrical Engineering
+            All academic projects with documentation links. Click "View Photos" to see project galleries.
         </p>
 
-        <!-- Category 1: Control Systems & Automation -->
+        <!-- Category 1: Control Systems -->
         <div class="project-categories fade-in">
             <div class="category-header">
                 <h3 class="category-title">🎛️ Control Systems & Automation</h3>
@@ -1063,17 +1118,17 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Ball Balancing System Control and Design</h4>
                         <span class="project-lab">Final Year Design Project | 2023-2024</span>
                     </div>
+                    <a href="https://drive.google.com/drive/u/1/folders/16_WP1EG0a_GG9lr-f_bFoed0Sz073qm8" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Developed a Proportional-Integral-Derivative (PID) controller to stabilize a ball on a plate using a resistive touch panel for accurate position sensing. Addressed the challenge of maintaining equilibrium of a dynamic object through real-time control and constant adjustments. Integrated mechanical engineering, electrical control systems, and advanced algorithms.</p>
+                <p>Developed a Proportional-Integral-Derivative (PID) controller to stabilize a ball on a plate using a resistive touch panel for accurate position sensing. Integrated mechanical engineering, electrical control systems, and advanced algorithms.</p>
                 <div class="tech-stack">
                     <span class="tech-item">PID Controller</span>
                     <span class="tech-item">Resistive Touch Panel</span>
                     <span class="tech-item">MATLAB</span>
                     <span class="tech-item">Real-time Control</span>
-                    <span class="tech-item">Mechanical Design</span>
-                </div>
-                <div class="project-outcomes">
-                    <strong>Outcomes:</strong> Enhanced educational understanding of control systems through real-time interaction; Developed robust PID controller model applicable to aerospace, automotive, and manufacturing; Contributed to sustainable development goals through optimized control systems.
                 </div>
             </div>
 
@@ -1083,31 +1138,36 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Automation of Agricultural Irrigation System</h4>
                         <span class="project-lab">Industrial Automation Lab | Mar-Apr 2024</span>
                     </div>
+                    <a href="https://drive.google.com/drive/u/1/folders/10j7vgQzY2l6LrUvf1PSztRDKkPUS5fLc" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Developed an automated agricultural irrigation system using CX-Programmer and CX-Designer. Implemented ladder logic to streamline and automate irrigation processes, enhancing efficiency and resource management in agricultural applications.</p>
+                <p>Developed an automated agricultural irrigation system using CX-Programmer and CX-Designer. Implemented ladder logic to streamline and automate irrigation processes.</p>
                 <div class="tech-stack">
                     <span class="tech-item">CX-Programmer</span>
                     <span class="tech-item">CX-Designer</span>
                     <span class="tech-item">Ladder Logic</span>
                     <span class="tech-item">PLC</span>
-                    <span class="tech-item">Industrial Automation</span>
                 </div>
             </div>
 
             <div class="detailed-project">
                 <div class="project-meta">
                     <div>
-                        <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">LEAD, LAG Compensator, and PID Controller for Antenna Azimuth Position Control</h4>
+                        <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">LEAD, LAG Compensator, and PID Controller for Antenna Azimuth</h4>
                         <span class="project-lab">Control Systems Lab | Nov-Dec 2022</span>
                     </div>
+                    <a href="https://drive.google.com/file/d/1lpvXVXEiGGDTQBdoulDRiC18gkVrUgHl/view" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Designed and tuned Lead and Lag compensators to improve the dynamic response and stability of the control system. Implemented a PID controller to ensure precise position control of the antenna azimuth. Conducted system modeling and simulation using MATLAB/Simulink to analyze and verify the performance of the compensators and the PID controller.</p>
+                <p>Designed and tuned Lead and Lag compensators to improve dynamic response and stability. Implemented PID controller for precise position control using MATLAB/Simulink.</p>
                 <div class="tech-stack">
                     <span class="tech-item">Lead-Lag Compensators</span>
                     <span class="tech-item">PID Controller</span>
                     <span class="tech-item">MATLAB/Simulink</span>
-                    <span class="tech-item">System Modeling</span>
-                    <span class="tech-item">Position Control</span>
                 </div>
             </div>
 
@@ -1117,16 +1177,34 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Control of Robotic Arm</h4>
                         <span class="project-lab">Microprocessors & Microcontrollers Lab | Mar-Apr 2022</span>
                     </div>
+                    <a href="https://drive.google.com/file/d/1VgfiYZcjYkBjSyc3qSuiaogYwkQKk-v2/view" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Designed and developed a robotic arm using wood and servo motors, achieving four degrees of freedom (4-DOF). The arm performs simple tasks like light material handling, enhancing safety in hazardous environments. Simulated the code in Proteus and verified PWM signals with an oscilloscope. The LCD displayed motor duty cycles based on potentiometer values, ensuring precise control.</p>
+                <p>Designed and developed a robotic arm using wood and servo motors, achieving four degrees of freedom. Simulated code in Proteus and verified PWM signals with oscilloscope. LCD displayed motor duty cycles based on potentiometer values.</p>
                 <div class="tech-stack">
                     <span class="tech-item">4-DOF Robotics</span>
                     <span class="tech-item">Servo Motors</span>
                     <span class="tech-item">Arduino</span>
-                    <span class="tech-item">Proteus Simulation</span>
+                    <span class="tech-item">Proteus</span>
                     <span class="tech-item">PWM Control</span>
-                    <span class="tech-item">Oscilloscope Verification</span>
-                    <span class="tech-item">LCD Display</span>
+                </div>
+            </div>
+
+            <div class="detailed-project">
+                <div class="project-meta">
+                    <div>
+                        <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Temperature and Pressure Measurement Device</h4>
+                        <span class="project-lab">Instrumentation Lab | Nov-Dec 2023</span>
+                    </div>
+                </div>
+                <p>Developed using BMP180 sensor, Arduino UNO, and 16x2 LCD Display. Coded in Arduino IDE to interface and process sensor data for environmental monitoring.</p>
+                <div class="tech-stack">
+                    <span class="tech-item">BMP180 Sensor</span>
+                    <span class="tech-item">Arduino UNO</span>
+                    <span class="tech-item">16x2 LCD</span>
+                    <span class="tech-item">Sensor Integration</span>
                 </div>
             </div>
         </div>
@@ -1144,15 +1222,17 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Energy Storage and Solar Farm Positioning Optimization</h4>
                         <span class="project-lab">Power Systems Design | Oct-Nov 2023</span>
                     </div>
+                    <a href="https://drive.google.com/drive/u/1/folders/1Rd8US4vO8OqJey0L_LggcFsIYrLBUrYV" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Led the design of a 1.5MW solar installation for the University of Gujrat, optimizing energy efficiency and positioning within a specific budget. Utilized Helioscope and real irradiation data from the PV Watts website to plan the deployment of 833 monocrystalline solar panels, each 550 watts. Showcased ability to achieve sustainable energy goals while adhering to financial constraints.</p>
+                <p>Led design of 1.5MW solar installation for University of Gujrat. 833 monocrystalline panels (550W each). Utilized Helioscope and PV Watts for optimization within budget constraints.</p>
                 <div class="tech-stack">
                     <span class="tech-item">Helioscope</span>
                     <span class="tech-item">PV Watts</span>
-                    <span class="tech-item">Solar Farm Design</span>
                     <span class="tech-item">1.5MW Capacity</span>
                     <span class="tech-item">Monocrystalline Panels</span>
-                    <span class="tech-item">Energy Optimization</span>
                 </div>
             </div>
 
@@ -1162,16 +1242,16 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Load Flow, Power Flow Analysis, and Fault Analysis</h4>
                         <span class="project-lab">Power System Analysis Lab | Apr-May 2023</span>
                     </div>
+                    <a href="https://drive.google.com/drive/u/1/folders/1AMAV4EwZpNuAwqIHeEGf5OnGhiqrCwzc" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Created a comprehensive project focusing on Load Flow, Power Flow Analysis, and Fault Analysis using IEEE 14-bus and IEEE 5-bus systems. Employed Newton-Raphson, Fast Decoupled, and Gauss-Seidel methods in PSS/E and MATLAB for load and fault simulations, including balanced and unbalanced fault conditions.</p>
+                <p>IEEE 14-bus and 5-bus systems. Newton-Raphson, Fast Decoupled, and Gauss-Seidel methods in PSS/E and MATLAB. Balanced and unbalanced fault simulations.</p>
                 <div class="tech-stack">
                     <span class="tech-item">PSS/E</span>
                     <span class="tech-item">MATLAB</span>
                     <span class="tech-item">IEEE 14-bus</span>
-                    <span class="tech-item">IEEE 5-bus</span>
-                    <span class="tech-item">Newton-Raphson Method</span>
-                    <span class="tech-item">Fast Decoupled Method</span>
-                    <span class="tech-item">Gauss-Seidel Method</span>
                     <span class="tech-item">Fault Analysis</span>
                 </div>
             </div>
@@ -1180,16 +1260,19 @@
                 <div class="project-meta">
                     <div>
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Power Factor Measurement and Correction using Capacitor Bank</h4>
-                        <span class="project-lab">Power Distribution and Utilization Lab | Apr-May 2023</span>
+                        <span class="project-lab">Power Distribution Lab | Apr-May 2023</span>
                     </div>
+                    <a href="https://drive.google.com/drive/u/1/folders/1QiScGlNfeoaHvkVXFCjsZJE4hYamB9YP" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Designed and implemented a Capacitor Bank to improve power factor in electrical systems. Utilized various capacitors, a choke for inductive load simulation, and light bulbs for resistive load simulation. Incorporated a 5A circuit breaker for safety and an energy meter to measure voltage, current, power, and power factor.</p>
+                <p>Designed Capacitor Bank with various capacitors, choke for inductive load, light bulbs for resistive load. Included 5A circuit breaker and energy meter for measurements.</p>
                 <div class="tech-stack">
-                    <span class="tech-item">Capacitor Bank Design</span>
-                    <span class="tech-item">Power Factor Correction</span>
+                    <span class="tech-item">Capacitor Bank</span>
+                    <span class="tech-item">Power Factor</span>
                     <span class="tech-item">Energy Meter</span>
-                    <span class="tech-item">Circuit Breaker Protection</span>
-                    <span class="tech-item">Inductive/Resistive Loads</span>
+                    <span class="tech-item">Circuit Protection</span>
                 </div>
             </div>
 
@@ -1199,14 +1282,17 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Phase Reversal Protection of Three-Phase Induction Motor</h4>
                         <span class="project-lab">Power System Protection Lab | Mar-Apr 2024</span>
                     </div>
+                    <a href="https://drive.google.com/file/d/1IeVWAzaBhB9GP4ECO_CI6QIvIRoP4Rce/view" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Implemented Phase Reversal Protection for a three-phase induction motor using a Magnetic Contactor, Phase Sequence Relay, and other essential components. This project addressed the complex engineering problem of power system protection, safeguarding the motor against incorrect phase sequence and ensuring reliable operation while preventing potential damage.</p>
+                <p>Implemented using Magnetic Contactor, Phase Sequence Relay, and essential components. Safeguarded motor against incorrect phase sequence.</p>
                 <div class="tech-stack">
                     <span class="tech-item">Three-Phase Motors</span>
-                    <span class="tech-item">Magnetic Contactor</span>
                     <span class="tech-item">Phase Sequence Relay</span>
+                    <span class="tech-item">Magnetic Contactor</span>
                     <span class="tech-item">Protection Systems</span>
-                    <span class="tech-item">Motor Control</span>
                 </div>
             </div>
 
@@ -1216,13 +1302,16 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Gold Leaf Electroscope</h4>
                         <span class="project-lab">High Voltage Lab | Mar-Apr 2024</span>
                     </div>
+                    <a href="https://drive.google.com/file/d/1EbOcTJgNRSYeFFvEgEh722uI5x_jifWH/view" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Constructed a Gold Leaf Electroscope using aluminum foil for the leaves, a PVC pipe for charging, and a glass structure for housing. Demonstrated practical application of electrostatic principles and high voltage concepts in a controlled laboratory environment.</p>
+                <p>Constructed using aluminum foil for leaves, PVC pipe for charging, and glass structure for housing. Demonstrated electrostatic principles.</p>
                 <div class="tech-stack">
                     <span class="tech-item">High Voltage</span>
                     <span class="tech-item">Electrostatics</span>
                     <span class="tech-item">Aluminum Foil Construction</span>
-                    <span class="tech-item">Glass Housing Design</span>
                 </div>
             </div>
         </div>
@@ -1240,15 +1329,17 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Amplitude Modulation and Demodulation</h4>
                         <span class="project-lab">Communication Systems Lab | Nov-Dec 2023</span>
                     </div>
+                    <a href="https://drive.google.com/drive/u/1/folders/18wtwKgKmko4DioMgOJV2YXPM4PuK72VN" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Developed an Amplitude Modulation and Demodulation project designed initially in LTspice and then implemented in hardware. Used components including capacitors (1.25nF, 1.45nF), an inductor (1mH), a 100kohm potentiometer, and resistors (1kohm, 2.2kohm). Demonstrated proficiency in analog communication techniques and practical circuit design skills.</p>
+                <p>Designed initially in LTspice then hardware implementation. Components: 1.25nF, 1.45nF capacitors, 1mH inductor, 100kohm potentiometer, 1kohm and 2.2kohm resistors.</p>
                 <div class="tech-stack">
                     <span class="tech-item">AM Modulation</span>
-                    <span class="tech-item">Demodulation</span>
                     <span class="tech-item">LTspice</span>
                     <span class="tech-item">Analog Communication</span>
                     <span class="tech-item">Circuit Design</span>
-                    <span class="tech-item">Hardware Implementation</span>
                 </div>
             </div>
 
@@ -1258,14 +1349,16 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">PVI Measurement Module and Transmission Line Model</h4>
                         <span class="project-lab">Electrical Power Transmission Lab | Oct-Nov 2023</span>
                     </div>
+                    <a href="https://drive.google.com/drive/u/1/folders/1Wvzsb6KRtQ51zZX7kOD8DKe7YFmoTR3n" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Led the development and integration of a PVI (Phase Voltage Current) Measurement Module and implemented a Transmission Line Model using MATLAB SIMULINK. Focused on improving power distribution system efficiency and reliability by detecting and analyzing phase voltage imbalances, while simulating transmission line dynamics through advanced software.</p>
+                <p>PVI (Phase Voltage Current) Measurement Module and Transmission Line Model using MATLAB SIMULINK. Improved power distribution efficiency by detecting phase voltage imbalances.</p>
                 <div class="tech-stack">
                     <span class="tech-item">PVI Measurement</span>
                     <span class="tech-item">MATLAB SIMULINK</span>
                     <span class="tech-item">Transmission Lines</span>
-                    <span class="tech-item">Power Distribution</span>
-                    <span class="tech-item">Voltage Imbalance Analysis</span>
                 </div>
             </div>
 
@@ -1275,42 +1368,26 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Design of Passive Band Pass, Band Stop & Twin-T Notch Filter</h4>
                         <span class="project-lab">Electrical Network Analysis | Sept-Oct 2021</span>
                     </div>
+                    <a href="https://drive.google.com/file/d/1uZz_ODL7td7D9hBXEqgz4K0dMVkXnL10/view" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Developed and simulated filters in LTSpice for Electrical Network Analysis, enhancing signal processing capabilities by accurately targeting specific frequency ranges. These filters play a pivotal role in signal processing and frequency control, finding applications in communications, audio processing, and instrumentation.</p>
+                <p>Developed and simulated filters in LTSpice for Electrical Network Analysis. Applications in communications, audio processing, and instrumentation.</p>
                 <div class="tech-stack">
                     <span class="tech-item">Band Pass Filter</span>
                     <span class="tech-item">Band Stop Filter</span>
                     <span class="tech-item">Twin-T Notch Filter</span>
                     <span class="tech-item">LTSpice</span>
-                    <span class="tech-item">Signal Processing</span>
-                    <span class="tech-item">Frequency Control</span>
                 </div>
             </div>
         </div>
 
-        <!-- Category 4: Programming & Digital Systems -->
+        <!-- Category 4: Programming & Digital -->
         <div class="project-categories fade-in">
             <div class="category-header">
                 <h3 class="category-title">💻 Programming & Digital Systems</h3>
-                <span class="category-count">4 Projects</span>
-            </div>
-
-            <div class="detailed-project">
-                <div class="project-meta">
-                    <div>
-                        <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Temperature and Pressure Measurement Device</h4>
-                        <span class="project-lab">Instrumentation Lab | Nov-Dec 2023</span>
-                    </div>
-                </div>
-                <p>Developed a project for Temperature and Pressure Measurement using a BMP180 sensor, Arduino UNO, and a 16x2 LCD Display. Initiated with coding in Arduino IDE to interface and process sensor data. Highlighted skills in sensor integration, microcontroller programming, and real-time data visualization through LCD displays, essential for environmental monitoring and data acquisition.</p>
-                <div class="tech-stack">
-                    <span class="tech-item">BMP180 Sensor</span>
-                    <span class="tech-item">Arduino UNO</span>
-                    <span class="tech-item">16x2 LCD</span>
-                    <span class="tech-item">Arduino IDE</span>
-                    <span class="tech-item">Sensor Integration</span>
-                    <span class="tech-item">Data Acquisition</span>
-                </div>
+                <span class="category-count">3 Projects</span>
             </div>
 
             <div class="detailed-project">
@@ -1319,15 +1396,17 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Audio Signal Processing with MATLAB</h4>
                         <span class="project-lab">Signals and Systems Lab | Mar-Apr 2022</span>
                     </div>
+                    <a href="https://drive.google.com/file/d/1DI85ZEr45fI7tZHMbfZZ-X63kwv3K17X/view" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Developed a project focusing on real-time audio signal processing using MATLAB. Implemented functionalities including real-time audio recording, delay, attenuation, playback, and saving of processed audio signals. Demonstrated proficiency in digital signal processing techniques and MATLAB programming for audio applications, emphasizing system analysis and real-time data manipulation.</p>
+                <p>Real-time audio recording, delay, attenuation, playback, and saving using MATLAB. Digital signal processing techniques for audio applications.</p>
                 <div class="tech-stack">
                     <span class="tech-item">MATLAB</span>
                     <span class="tech-item">Audio Processing</span>
                     <span class="tech-item">Real-time Processing</span>
-                    <span class="tech-item">Signal Delay</span>
-                    <span class="tech-item">Attenuation</span>
-                    <span class="tech-item">Digital Signal Processing</span>
+                    <span class="tech-item">DSP</span>
                 </div>
             </div>
 
@@ -1337,14 +1416,17 @@
                         <h4 style="color: var(--light); font-size: 1.2rem; margin-bottom: 0.25rem;">Binary Counter Using JK Flip Flop</h4>
                         <span class="project-lab">Digital Logic Design Lab | Sept-Oct 2021</span>
                     </div>
+                    <a href="https://drive.google.com/drive/u/1/folders/15acNuQ8J7VDkv8g4wxPuSew0Zt2SGsZ1" class="project-link" target="_blank" style="margin-top: 0;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        View Photos
+                    </a>
                 </div>
-                <p>Developed a binary counter in ModelSim using JK flip-flops. The versatile JK flip-flop, known as a universal flip-flop, was configured to function as SR, D, and T flip-flops, demonstrating its input-following character and adaptability in digital logic design.</p>
+                <p>Developed binary counter in ModelSim using JK flip-flops. Configured as universal flip-flop (SR, D, T configurations). Demonstrated input-following character.</p>
                 <div class="tech-stack">
                     <span class="tech-item">ModelSim</span>
                     <span class="tech-item">JK Flip-Flops</span>
                     <span class="tech-item">Binary Counter</span>
                     <span class="tech-item">Digital Logic</span>
-                    <span class="tech-item">VHDL/Verilog</span>
                 </div>
             </div>
         </div>
@@ -1466,7 +1548,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Husnain Ahmed. All rights reserved. | Passport: BP1184091</p>
+        <p>&copy; 2025 Husnain Ahmed. All rights reserved.</p>
         <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.8;">
             Electrical Engineer | Operation Engineer | Network Specialist
         </p>
